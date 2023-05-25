@@ -321,6 +321,8 @@ abstract class Util
      */
     public static function escapeSpacesIfOnWindows(string $cmd): string
     {
-        return defined('PHP_WINDOWS_VERSION_BUILD') ? sprintf('"%s"', $cmd) : $cmd;
+        $escapeSpacesIfOnWindows = !defined('SKIP_ESCAPE_SPACES_IF_ON_WINDOWS') && defined('PHP_WINDOWS_VERSION_BUILD');
+
+        return $escapeSpacesIfOnWindows ? sprintf('"%s"', $cmd) : $cmd;
     }
 }

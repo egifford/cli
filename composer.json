@@ -20,6 +20,9 @@
   "require-dev": {
     "symfony/process": "^4.3 | ^5.0"
   },
+  "replace": {
+    "sebastianfeldmann/cli": "3.4.1"
+  },
   "autoload": {
     "psr-4": {
       "SebastianFeldmann\\Cli\\": "src/"
